@@ -1,0 +1,225 @@
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300&family=Poppins:wght@400;600;700&display=swap");
+@font-face {
+  font-family: myfont;
+  src: url(MerriweatherBold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Merriweather", sans-serif;
+}
+
+.text-primary {
+  color: #2a324b;
+}
+
+header {
+  border-radius: 0px 0px 40px 40px;
+  width: 100%;
+  background-image: linear-gradient(#f7c59f, #e1e5ee);
+  min-height: 66vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.button-primary {
+  padding: 8px 20px 8px 20px;
+  font-size: 18px;
+  font-family: "Merriweather";
+  font-weight: 400;
+  border: none;
+  background-color: #2a324b;
+  color: white;
+  border-radius: 5px;
+}
+.button-action {
+  padding: 8px 20px 8px 20px;
+  font-size: 12px;
+  font-family: "Merriweather";
+  font-weight: 400;
+  border: none;
+  background-color: #2a324b;
+  color: white;
+  border-radius: 4px;
+}
+.button-seccondary {
+  padding: 8px 20px 8px 20px;
+  font-size: 18px;
+  font-family: "Merriweather";
+  font-weight: 400;
+  border: none;
+  background-color: #f7c59f;
+  color: #2a324b;
+  border-radius: 5px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+.flex > secction > .content {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.menu li:hover {
+  background-color: #2a324b;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+.flex {
+  display: flex;
+  align-items: stretch;
+}
+.grow-1 {
+  flex-grow: 1;
+}
+.grow-2 {
+  flex-grow: 2;
+}
+.grow-3 {
+  flex-grow: 3;
+}
+.grow-4 {
+  flex-grow: 4;
+}
+
+.card {
+  transition: 0.3s;
+  background: #e1e5ee;
+  color: #2a324b;
+  border-radius: 10px;
+}
+.card > img {
+  border-radius: 10px 10px 0px 0px;
+}
+.container {
+  padding: 20px 30px;
+}
+.container > small {
+  font-size: 0.7em;
+}
+
+.linimasa-data > div {
+  margin: 20px;
+}
+.card-review {
+  padding: 10px;
+  transition: 0.3s;
+  background: #e1e5ee;
+  color: #2a324b;
+  border-radius: 10px;
+  max-width: 300px;
+}
+.comments {
+  padding: 20px;
+}
+.comments > p {
+  font-size: 0.8em;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: teal;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+  .btn-signin {
+    display: none;
+  }
+  .flex {
+    flex-direction: column;
+  }
+  .flex > section > .content {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .flex > section > img {
+    width: 100%;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #4c9e9e;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+    background-color: #4c9e9e;
+  }
+  .card-review {
+    max-width: 100%;
+    margin: 10px;
+  }
+}
