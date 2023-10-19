@@ -13,7 +13,7 @@
     <header class="text-center">
         <nav class="navbar">
             <!-- LOGO -->
-            <div class="logo text-primary" style="font-weight: 700;">Alokasa</div>
+            <div class="logo text-primary text-bold">Alokasa</div>
         
             <!-- NAVIGATION MENU -->
             <ul class="nav-links">
@@ -23,25 +23,25 @@
         
               <!-- NAVIGATION MENUS -->
               <div class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>        
-                <li><a href="/">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>        
+                <li><a href="#linimasa">Contact</a></li>
               </div>
             </ul>
             <button class="button-primary btn-signin">sign in</button>
         </nav>
-        <div class="content text-primary" style="margin-top: 10vh;">
+        <div class="content text-primary" id="header-text" style="margin-top: 10vh;">
             <h2 style="font-size: 3em;">Simpan kenangan indah anda</h2>
             <h2>Karena moment, sulit diulang kembali</h2>
         </div>
-        <button class="button-seccondary" style="margin-top: 10vh">Pelajari selengkapnya &rarr;</button>
+        <button class="button button-seccondary" style="margin-top: 10vh">Pelajari selengkapnya &rarr;</button>
     </header>
     <main style="padding: 20px;">
-        <section class="flex">
+        <section class="flex" id="#about">
             <section style="margin: 20px;">
                 <img src="assets/images/asset.png" alt="" width="400vh" style="background-size: cover; border-radius: 10px">
             </section>
-            <section class="grow-4 text-center" style="margin: 20px">
+            <section class="grow-4 text-center" style="margin: 20px" >
                 <div class="content" style="margin-top: 15vh;">
                     <h1 style="font-size: 2em;">About Us</h1>
                     <p style="font-weight: 1; font-size: 0.8em; margin-top: 5vh;">Alokasa hadir untuk membantu Anda mengabadikan momen-momen berharga dalam hidup Anda. Kami memahami bahwa setiap pengalaman memiliki nilai pribadi yang unik, dan itulah mengapa kami memberikan alat yang kuat untuk merangkumnya. Linimasa pribadi Anda adalah kanvas untuk mengungkapkan kreativitas Anda.</p>
@@ -50,10 +50,10 @@
         </section>
         <hr style="width: 70%; margin: auto;  margin-top: 10vh;">
       
-        <section style="padding: 20px; margin-top: 10vh;">
+        <section style="padding: 20px; margin-top: 10vh;" id="linimasa">
             <section class="flex" style="justify-content: space-between;">
                 <h1 style="font-size: 2em;">Linimasa</h1>
-                <button class="button-seccondary">Tambah linimasa &plus;</button>
+                <button class="button button-seccondary">Tambah linimasa &plus;</button>
             </section>
             <section class="flex linimasa-data" style="justify-content: space-evenly;">
                 <div class="card">
@@ -147,3 +147,17 @@
     </main>
 </body>
 </html>
+
+<script>
+    window.onload = function(){
+        document.getElementById('header-text').style.opacity= 1;
+        document.getElementById('header-text').style.transform = "translateX(0px)";
+        console.log('haha');
+    }
+    // let h = window.pageYOffset;
+    // window.onscroll = () => {
+    //     let prevScroll = window.pageYOffset;
+    //     console.log(h)
+    //     h = prevScroll;
+    // }
+</script>

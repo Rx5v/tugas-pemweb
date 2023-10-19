@@ -10,12 +10,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Merriweather", sans-serif;
 }
 
 .text-primary {
   color: #2a324b;
+}
+
+#header-text {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 1.5s;
 }
 
 header {
@@ -96,11 +105,12 @@ li {
 .menu li:hover {
   background-color: #2a324b;
   border-radius: 5px;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .menu li {
   padding: 5px 14px;
+  transition: 0.3s;
 }
 
 input[type="checkbox"] {
@@ -165,16 +175,44 @@ input[type="checkbox"] {
   font-size: 0.8em;
 }
 
+.text-bold {
+  font-weight: 700;
+}
+.button {
+  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+}
+
+/* card animation */
+.card:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  scale: 1.05;
+  transition: 0.3 sec;
+}
+.card-review:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  scale: 1.05;
+  transition: 0.3 sec;
+}
+
+/* button animation */
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  color: #e1e5ee;
+  background-color: #2a324b;
+}
+
 /* APPLYING MEDIA QUERIES */
 @media (max-width: 768px) {
   .menu {
     display: none;
     position: absolute;
-    background-color: teal;
+    background-color: #2a324b;
     right: 0;
     left: 0;
     text-align: center;
     padding: 16px 0;
+    color: #2a324b;
   }
   .btn-signin {
     display: none;
@@ -193,7 +231,12 @@ input[type="checkbox"] {
 
   .menu li:hover {
     display: inline-block;
-    background-color: #4c9e9e;
+    background-color: #e1e5ee;
+    transition: 0.3s ease;
+  }
+  .menu li:active {
+    display: inline-block;
+    background-color: #e1e5ee;
     transition: 0.3s ease;
   }
 
@@ -207,16 +250,6 @@ input[type="checkbox"] {
 
   .hamburger {
     display: block;
-  }
-
-  .dropdown {
-    left: 50%;
-    top: 30px;
-    transform: translateX(35%);
-  }
-
-  .dropdown li:hover {
-    background-color: #4c9e9e;
   }
   .card-review {
     max-width: 100%;
