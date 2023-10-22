@@ -241,7 +241,7 @@ input[type="checkbox"] {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .flex > section > img {
+  .flex > div > img {
     width: 100%;
   }
 
