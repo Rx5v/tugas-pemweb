@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Upload-Alokasa</title>
+</head>
+
+<body>
+        <nav class="navbar" style="background-color: #2a324b;">
+            <!-- LOGO -->
+            <div class="logo text-seccondary text-bold">Alokasa</div>
+        
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+              <!-- USING CHECKBOX HACK -->
+              <input type="checkbox" id="checkbox_toggle" />
+              <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        
+              <!-- NAVIGATION MENUS -->
+              <div class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>        
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="">Setting</a></li>
+              </div>
+            </ul>
+        </nav>
+
+    <h1 align="center">Upload Foto</h1>
+    <h2>Proses Upload foto</h2>
+    <p>Silahkan <b>upload foto</b> Anda pada tombol di bawah ini.</p>  
+
+    <form action="pilihan.html" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Selesai" name="submit">
+    </form>
+
+<a href="index.html">Kembali ke halaman awal</a>
+</body>
+</html>

@@ -10,16 +10,15 @@
     <title>Alokasa</title>
 </head>
 <body>
-    <header class="text-center">
-        <nav class="navbar">
-            <!-- LOGO -->
-            <div class="logo text-primary text-bold">Alokasa</div>
+    <header class="text-center" style="top: 0; position: absolute;">
+        <nav class="navbar bg-transparent" id="navbar">
+            <div class="logo text-primary text-bold" id="logo">Alokasa</div>
         
             <!-- NAVIGATION MENU -->
             <ul class="nav-links">
               <!-- USING CHECKBOX HACK -->
               <input type="checkbox" id="checkbox_toggle" />
-              <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+              <label for="checkbox_toggle" id="hamburger" class="hamburger">&#9776;</label>
         
               <!-- NAVIGATION MENUS -->
               <div class="menu">
@@ -30,32 +29,32 @@
             </ul>
             <button class="button-primary btn-signin">sign in</button>
         </nav>
-        <div class="content text-primary" id="header-text" style="margin-top: 10vh;">
+        <div class="content text-primary" id="header-text" style="margin-top: 20vh; padding: 20px;">
             <h2 style="font-size: 3em;">Simpan kenangan indah anda</h2>
-            <h2>Karena moment, sulit diulang kembali</h2>
+            <h3>Karena moment, sulit diulang kembali</h3>
         </div>
         <button class="button button-seccondary" style="margin-top: 10vh">Pelajari selengkapnya &rarr;</button>
     </header>
-    <main style="padding: 20px;">
-        <section class="flex" id="#about">
-            <section style="margin: 20px;">
+    <main style="padding: 20px;  margin-top: 70vh;">
+        <section class="flex"  id="about">
+            <div style="margin: 20px;">
                 <img src="assets/images/asset.png" alt="" width="400vh" style="background-size: cover; border-radius: 10px">
-            </section>
-            <section class="grow-4 text-center" style="margin: 20px" >
+            </div>
+            <div class="grow-4 text-center" style="margin: 20px" >
                 <div class="content" style="margin-top: 15vh;">
                     <h1 style="font-size: 2em;">About Us</h1>
                     <p style="font-weight: 1; font-size: 0.8em; margin-top: 5vh;">Alokasa hadir untuk membantu Anda mengabadikan momen-momen berharga dalam hidup Anda. Kami memahami bahwa setiap pengalaman memiliki nilai pribadi yang unik, dan itulah mengapa kami memberikan alat yang kuat untuk merangkumnya. Linimasa pribadi Anda adalah kanvas untuk mengungkapkan kreativitas Anda.</p>
                 </div>
-            </section>
+            </div>
         </section>
         <hr style="width: 70%; margin: auto;  margin-top: 10vh;">
       
         <section style="padding: 20px; margin-top: 10vh;" id="linimasa">
-            <section class="flex" style="justify-content: space-between;">
+            <div class="flex" style="justify-content: space-between;">
                 <h1 style="font-size: 2em;">Linimasa</h1>
-                <button class="button button-seccondary">Tambah linimasa &plus;</button>
-            </section>
-            <section class="flex linimasa-data" style="justify-content: space-evenly;">
+                <a href="upload.html" class="button button-seccondary">Tambah linimasa &plus;</a>
+            </div>
+            <div class="flex linimasa-data" style="justify-content: space-evenly;">
                 <div class="card">
                     <img src="assets/images/kelasBDL.jpeg" alt="Avatar" style="width:100%">
                     <div class="container">
@@ -100,7 +99,7 @@
                       </div>
                     </div>
                   </div> 
-            </section>
+            </div>
         </section>
         <hr style="width: 70%; margin: auto;  margin-top: 10vh;">
         <section style="padding: 20px; margin-top: 10vh;">
@@ -149,15 +148,42 @@
 </html>
 
 <script>
+    // Animate Header text when open / reload browser
     window.onload = function(){
         document.getElementById('header-text').style.opacity= 1;
         document.getElementById('header-text').style.transform = "translateX(0px)";
-        console.log('haha');
     }
-    // let h = window.pageYOffset;
-    // window.onscroll = () => {
-    //     let prevScroll = window.pageYOffset;
-    //     console.log(h)
-    //     h = prevScroll;
-    // }
+
+    /* !TODO : Action to handle Navbar when user is scrolling */
+
+    // get current height
+    let currentHeight = window.pageYOffset;
+
+    // function when user is scrolling
+    window.onscroll = () => {
+        // get previous height
+        let prevHeight = window.pageYOffset;
+        
+        if (currentHeight > 520){
+            // handling navbar when scroll up by adding a class
+            document.getElementById('navbar').classList.add('bg-primary')
+            document.getElementById('navbar').classList.remove('bg-transparent')
+            document.getElementById('logo').classList.add('text-seccondary')
+            document.getElementById('logo').classList.remove('text-primary')
+            document.getElementById('hamburger').classList.add('text-seccondary')
+            document.getElementById('hamburger').classList.remove('text-primary')
+            
+        } else if ( currentHeight < 520) {
+            // handling navbar when scroll down by adding a class
+            document.getElementById('logo').classList.remove('text-seccondary')
+            document.getElementById('logo').classList.add('text-primary')
+            document.getElementById('hamburger').classList.remove('text-seccondary')
+            document.getElementById('hamburger').classList.add('text-primary')
+            document.getElementById('navbar').classList.remove('bg-primary')
+            document.getElementById('navbar').classList.add('bg-transparent')
+        }
+
+        // assign currentHeight with previous height
+        currentHeight = prevHeight;
+    }
 </script>
